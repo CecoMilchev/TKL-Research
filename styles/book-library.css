@@ -22,21 +22,17 @@
     background: #BBB;
 }
 
-#viewHome{
-    margin: auto;
-    width: 50%;
-    border: 3px solid #000000;
-    padding: 10px;
-    border-radius: 15px;
-}
-
-img {
+img{
     display: block;
     margin: auto;
 }
 main>section {
     display: none;
-    padding: 20px 5px;
+    margin: auto;
+    width: 50%;
+    border: 3px solid #000000;
+    padding: 15px;
+    border-radius: 15px;
 }
 
 section h1 {
