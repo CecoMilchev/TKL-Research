@@ -8,6 +8,7 @@ function startApp() {
     $('#linkHome').click(showHomeView);
     $('#linkListBooks').click(showListBooksView);
     $('#linkCreateBook').click(showCreateBookView);
+    $('#linkSearch').click(showSearch);
 
     function showView(viewName) {
         //hide all viewvs and show the selected view only
@@ -31,5 +32,9 @@ function startApp() {
 
     function showEditBookView() {
         showView("viewEditBook");
+    }
+
+    function showSearch() {
+        showView("search");
     }
 }
