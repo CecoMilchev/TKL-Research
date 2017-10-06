@@ -5,12 +5,12 @@ const factory = function () {
         return id++;
     }
 
-    function createBook(title, author, descr) {
+    function createBook(title, author, description) {
         return {
             id: IDgen(),
             title: title,
             author: author,
-            descr: descr
+            description: description
         }
     }
     return {

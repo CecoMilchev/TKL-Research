@@ -23,14 +23,14 @@ $(function() {
         showView("viewListBooks");
         
     }
-    $('#viewListBooks').click(()=>{
+    $('#linkListBooks').click(()=>{
         controller.commandProcessor.listBooksCommand();
+        console.log('list call');
         showListBooksView();
     })
 
     function showCreateBookView() {
         showView("viewCreateBook");
-        $("#formCreateBook").trigger("reset");
     }
 
     function showEditBookView() {
