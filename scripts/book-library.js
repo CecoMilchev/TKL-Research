@@ -9,6 +9,7 @@ $(function() {
     $('#linkListRecipes').click(showListRecipesView);
     $('#linkCreateBook').click(showCreateBookView);
     $('#linkCreateRecipe').click(showCreateRecipeView);
+
     $('#linkSearch').click(showSearch);
 
     function showView(viewName) {
@@ -30,6 +31,12 @@ $(function() {
         showView("viewListRecipes");
 
     }
+
+    function showCommentsView() {
+        showView("viewComments")
+    }
+
+
     $('#linkListBooks').click(() => {
         controller.commandProcessor.listBooksCommand();
         console.log('list call');
