@@ -11,20 +11,26 @@ const commandsFunc = (factory, database) => {
         console.log(database.books);
     }
 
-    function listBooks (){
+    function listBooks() {
         $('#books').empty();
         let books = database.returnBooks();
         let booksList = $('#books');
-        let booksTable = $('<table>');
-        for (var book of books) {
-           let tableRow = $('<tr>').append(
-               $('<td>').text(book.title),
-               $('<td>').text(book.author),
-               $('<td>').text(book.description)
-           );
-           booksTable.append(tableRow);
+        if (books.length === 0) {
+            let p = $('<p>').append('No books yet.');
+            booksList.append(p);
+        } else {
+            let booksTable = $('<table>');
+            for (var book of books) {
+                let tableRow = $('<tr>').append(
+                    $('<td>').text(book.title),
+                    $('<td>').text(book.author),
+                    $('<td>').text(book.description)
+                );
+                booksTable.append(tableRow);
+            }
+            booksList.append(booksTable);
         }
-        booksList.append(booksTable);
+
     }
 
     return {
