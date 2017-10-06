@@ -1,8 +1,7 @@
-function startApp() {
+$(function() {
     //Clear user auth data
     sessionStorage.clear();
     $("#viewHome").show();
-
 
     // Bind the navigation menu links
     $('#linkHome').click(showHomeView);
@@ -22,7 +21,7 @@ function startApp() {
   
     function showListBooksView() {
         showView("viewListBooks");
-        listBooks();
+      //  listBooks();
     }
 
     function showCreateBookView() {
@@ -37,4 +36,23 @@ function startApp() {
     function showSearch() {
         showView("search");
     }
-}
+
+    //Bind the form submit Buttons
+   // $("#formLogin").submit(loginUser);
+   // $("#formRegister").submit(registerUser);
+    $("#buttonCreateBook").click(()=>{
+        x: console.log('clicked');
+         controller.commandProcessor.createProcess();
+
+    //      let bookData = {
+    //         title: $("#formCreateBook input[name=title]").val(),
+    //         author: $("#formCreateBook input[name=author]").val(),
+    //         description: $("#formCreateBook textarea[name=descr]").val()
+    //     };
+
+    //    let book = factory.createBook(bookData.title, bookData.author, bookData.description);
+    //    databaseFunction.addBook(book);
+    //    console.log(database.books);
+        });
+  //  $("#buttonEditBook").click(editBook);
+});

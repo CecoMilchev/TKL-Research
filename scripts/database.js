@@ -1,6 +1,6 @@
 // TODO fix listing so it works for html
 
-const database = (function () {
+const databaseFunction = function () {
     let books = [];
     let recepies = [];
 
@@ -21,12 +21,14 @@ const database = (function () {
     };
 
     return {
+        x: console.log('data'),
+        books:books,
         addBook: addBook,
         listBooks: listBooks,
         addRecepie: addRecepie,
         listRecepies: listRecepies
     }
-})();
+};
 
 // database.addBook({name:'book1'});
 // database.listBooks();

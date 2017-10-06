@@ -1,25 +1,26 @@
-const factory = (function () {
+const factory = function () {
 
     function IDgen() {
         let id = 0;
         return id++;
     }
 
-    function createBook(author, title, descr) {
+    function createBook(title, author, descr) {
         return {
             id: IDgen(),
-            author: author,
             title: title,
+            author: author,
             descr: descr
         }
     }
     return {
+        x: console.log("factroy"),
         createBook: createBook
     }
-})();
+};
 
-let x = [];
+// let x = [];
 
-x.push(factory.createBook('author','title','alala'));
+// x.push(factory.createBook('author', 'title', 'alala'));
 
-console.log(x);
+// console.log(x);
