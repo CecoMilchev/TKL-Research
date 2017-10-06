@@ -23,7 +23,7 @@ $(function() {
         showView("viewListBooks");
         
     }
-    $('#buttonCreateBook').click(()=>{
+    $('#viewListBooks').click(()=>{
         controller.commandProcessor.listBooksCommand();
         showListBooksView();
     })

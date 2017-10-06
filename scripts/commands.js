@@ -12,7 +12,7 @@ const commandsFunc = (factory, database) => {
     }
 
     function listBooks (){
-    
+        $('#books').empty();
         let books = database.returnBooks();
         let booksList = $('#books');
         let booksTable = $('<table>');
