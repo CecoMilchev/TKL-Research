@@ -21,8 +21,12 @@ $(function() {
   
     function showListBooksView() {
         showView("viewListBooks");
-        controller.listBooksCommand();
+        
     }
+    $('#linkListBooks').click(()=>{
+        controller.commandProcessor.listBooksCommand();
+        showListBooksView();
+    })
 
     function showCreateBookView() {
         showView("viewCreateBook");

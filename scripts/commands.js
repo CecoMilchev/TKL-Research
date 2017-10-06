@@ -11,7 +11,7 @@ const commandsFunc = (factory, database) => {
         console.log(database.books);
     }
 
-    function listBooks (database){
+    function listBooks (){
     
         let books = database.returnBooks();
         let booksList = $('#books');
@@ -22,8 +22,9 @@ const commandsFunc = (factory, database) => {
                $('<td>').text(book.author),
                $('<td>').text(book.description)
            );
+           booksTable.append(tableRow);
         }
-        booksList.append(tableRow);
+        booksList.append(booksTable);
     }
 
     return {

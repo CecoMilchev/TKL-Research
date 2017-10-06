@@ -6,7 +6,7 @@ const databaseFunction = function () {
 
     const returnBooks = function () {
     
-        return this.books;
+        return books;
     }
 
     const addBook = function (obj) {

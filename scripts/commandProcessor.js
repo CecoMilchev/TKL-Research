@@ -7,12 +7,11 @@ const commandProcessorFunction = (commands) => {
             description: $("#formCreateBook textarea[name=descr]").val()
         };
 
-         commands.createBook(bookData.title, bookData.author, bookData.description);
-         $("#formCreateBook").trigger("reset");
-
-         const listBooksCommand = function() {
-             commands.listBooks();
-         }
+        commands.createBook(bookData.title, bookData.author, bookData.description);
+        $("#formCreateBook").trigger("reset");
+    }
+    const listBooksCommand = function () {
+        commands.listBooks();
     }
 
     return {
