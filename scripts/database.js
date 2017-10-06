@@ -4,6 +4,11 @@ const databaseFunction = function () {
     let books = [];
     let recepies = [];
 
+    const returnBooks = function () {
+    
+        return this.books;
+    }
+
     const addBook = function (obj) {
         books.push(obj);
     };
@@ -26,7 +31,8 @@ const databaseFunction = function () {
         addBook: addBook,
         listBooks: listBooks,
         addRecepie: addRecepie,
-        listRecepies: listRecepies
+        listRecepies: listRecepies,
+        returnBooks: returnBooks
     }
 };
 
