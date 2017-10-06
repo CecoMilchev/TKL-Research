@@ -1,12 +1,13 @@
 const commandsFunc = (factory, database) => {
-    function createBook(title, author, description) {
+    function createBook(title, author, category, description) {
         let bookData = {
             title: $("#formCreateBook input[name=title]").val(),
             author: $("#formCreateBook input[name=author]").val(),
+            category: $("#formCreateBook input[name=category]").val(),
             description: $("#formCreateBook textarea[name=descr]").val()
         };
 
-        let book = factory.createBook(bookData.title, bookData.author, bookData.description);
+        let book = factory.createBook(bookData.title, bookData.author, bookData.category, bookData.description);
         database.addBook(book);
         console.log(database.books);
     }
@@ -24,6 +25,7 @@ const commandsFunc = (factory, database) => {
                 let tableRow = $('<tr>').append(
                     $('<td>').text(book.title),
                     $('<td>').text(book.author),
+                    $('<td>').text(book.category),
                     $('<td>').text(book.description)
                 );
                 booksTable.append(tableRow);
@@ -51,7 +53,7 @@ const commandsFunc = (factory, database) => {
         let recipesList = $('#recipes');
         if (recipes.length === 0) {
             let p = $('<p>').append('No recipes yet.');
-            recipeList.append(p);
+            recipesList.append(p);
         } else {
             let recipeTable = $('<table>');
             for (var recipe of recipes) {

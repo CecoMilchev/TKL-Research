@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
 
-   
+
     <link rel="stylesheet" type="text/css" href="styles/book-library.css" />
 
     <title>e-books</title>
 </head>
 
-<body >
+<body>
 
     <header id="menu">
         <a href="#" id="linkHome">Home</a>
@@ -26,14 +26,14 @@
         <section id="viewHome">
             <h1> Welcome to your E-Library!</h1>
             <img src="https://www.trinity.ox.ac.uk/wordpress/wp-content/uploads/2017/02/lib-and-danson-552x370.jpg">
-            
+
         </section>
 
         <section id="viewListBooks">
             <h1>Books</h1>
             <div id="books"></div>
         </section>
-        
+
         <section id="viewListRecipes">
             <h1>Recipes</h1>
             <div id="recipes"></div>
@@ -46,12 +46,14 @@
                 <div><input type="text" name="title" required /></div>
                 <div>Author:</div>
                 <div><input type="text" name="author" required /></div>
+                <div>Category:</div>
+                <div><input type="text" name="category" required /></div>
                 <div>Description:</div>
                 <div><textarea name="descr" rows="10" required></textarea></div>
                 <div><input type="button" id="buttonCreateBook" value="Create" /></div>
             </form>
         </section>
-        
+
         <section id="viewCreateRecipe">
             <h1>Create Recipe</h1>
             <form id="formCreateRecipe">
@@ -90,7 +92,7 @@
 
 
     <script src="scripts/jquery-3.2.1.min.js"></script>
-    
+
     <script src="scripts/database.js"></script>
     <script src="scripts/factory.js"></script>
     <script src="scripts/commands.js"></script>

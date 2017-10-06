@@ -1,18 +1,20 @@
-const factory = function () {
+const factory = function() {
 
     function IDgen() {
         let id = 0;
-        return (function(){return id++}());
+        return (function() { return id++ }());
     }
 
-    function createBook(title, author, description) {
+    function createBook(title, author, category, description) {
         return {
             id: IDgen(),
             title: title,
             author: author,
+            category: category,
             description: description
         }
     }
+
     function createRecipe(title, ingredients, directions) {
         return {
             id: IDgen(),

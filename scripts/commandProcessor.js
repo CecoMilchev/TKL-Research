@@ -4,10 +4,11 @@ const commandProcessorFunction = (commands) => {
         let bookData = {
             title: $("#formCreateBook input[name=title]").val(),
             author: $("#formCreateBook input[name=author]").val(),
+            category: $("#formCreateBook input[name=category]").val(),
             description: $("#formCreateBook textarea[name=descr]").val()
         };
-      
-        commands.createBook(bookData.title, bookData.author, bookData.description);
+
+        commands.createBook(bookData.title, bookData.author, bookData.category, bookData.description);
         $("#formCreateBook").trigger("reset");
     }
 
@@ -20,11 +21,11 @@ const commandProcessorFunction = (commands) => {
         commands.createRecipe(recipeData.title, recipeData.ingredients, recipeData.directions);
         $("#formCreateBook").trigger("reset");
     }
-    
-    const listBooksCommand = function () {
+
+    const listBooksCommand = function() {
         commands.listBooks();
     }
-    const listRecipesCommand = function () {
+    const listRecipesCommand = function() {
         commands.listRecipes();
     }
 
