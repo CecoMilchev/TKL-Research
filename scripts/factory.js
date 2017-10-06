@@ -2,7 +2,7 @@ const factory = function () {
 
     function IDgen() {
         let id = 0;
-        return id++;
+        return (function(){return id++}());
     }
 
     function createBook(title, author, description) {
