@@ -32,6 +32,7 @@ const databaseFunction = function () {
     return {
         x: console.log('data'),
         books:books,
+        recipes: recipes,
         addBook: addBook,
         listBooks: listBooks,
         addRecipe: addRecipe,

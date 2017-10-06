@@ -37,7 +37,7 @@ const commandsFunc = (factory, database) => {
         let recipeData = {
             title: $("#formCreateRecipe input[name=title]").val(),
             ingredients: $("#formCreateRecipe input[name=ingredients]").val(),
-            directions: $("#formCreateBook textarea[name=directions]").val()
+            directions: $("#formCreateRecipe textarea[name=directions]").val()
         };
 
         let recipe = factory.createRecipe(recipeData.title, recipeData.ingredients, recipeData.directions);
@@ -48,7 +48,7 @@ const commandsFunc = (factory, database) => {
     function listRecipes() {
         $('#recipes').empty();
         let recipes = database.returnRecipes();
-        let recipeList = $('#recipes');
+        let recipesList = $('#recipes');
         if (recipes.length === 0) {
             let p = $('<p>').append('No recipes yet.');
             recipeList.append(p);
@@ -62,7 +62,7 @@ const commandsFunc = (factory, database) => {
                 );
                 recipeTable.append(tableRow);
             }
-            recipesList.append(booksTable);
+            recipesList.append(recipeTable);
         }
 
     }
