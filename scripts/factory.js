@@ -13,9 +13,18 @@ const factory = function () {
             description: description
         }
     }
+    function createRecipe(title, ingredients, directions) {
+        return {
+            id: IDgen(),
+            title: title,
+            ingredients: ingredients,
+            directions: directions
+        }
+    }
     return {
         x: console.log("factroy"),
-        createBook: createBook
+        createBook: createBook,
+        createRecipe: createRecipe
     }
 };
 

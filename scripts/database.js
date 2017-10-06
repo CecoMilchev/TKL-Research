@@ -2,27 +2,31 @@
 
 const databaseFunction = function () {
     let books = [];
-    let recepies = [];
+    let recipes = [];
 
     const returnBooks = function () {
     
         return books;
+    }
+    const returnRecipes = function () {
+        
+            return recipes;
     }
 
     const addBook = function (obj) {
         books.push(obj);
     };
 
-    const addRecepie = function (obj) {
-        recepies.push(obj);
+    const addRecipe = function (obj) {
+        recipes.push(obj);
     };
 
     const listBooks = function () {
         console.log(books);
     };
 
-    const listRecepies = function () {
-        console.log(recepies);
+    const listRecipes = function () {
+        console.log(recipes);
     };
 
     return {
@@ -30,9 +34,10 @@ const databaseFunction = function () {
         books:books,
         addBook: addBook,
         listBooks: listBooks,
-        addRecepie: addRecepie,
-        listRecepies: listRecepies,
-        returnBooks: returnBooks
+        addRecipe: addRecipe,
+        listRecipes: listRecipes,
+        returnBooks: returnBooks,
+        returnRecipes: returnRecipes
     }
 };
 

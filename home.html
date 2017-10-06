@@ -15,8 +15,11 @@
     <header id="menu">
         <a href="#" id="linkHome">Home</a>
         <a href="#" id="linkListBooks">List Books</a>
+        <a href="#" id="linkListRecipes">List Recipes</a>
         <a href="#" id="linkCreateBook">Create Book</a>
+        <a href="#" id="linkCreateRecipe">Create Recipe</a>
         <a href="#" id="linkSearch">Search For Books Online</a>
+
     </header>
 
     <main>
@@ -30,6 +33,11 @@
             <h1>Books</h1>
             <div id="books"></div>
         </section>
+        
+        <section id="viewListRecipes">
+            <h1>Recipes</h1>
+            <div id="recipes"></div>
+        </section>
 
         <section id="viewCreateBook">
             <h1>Create Book</h1>
@@ -41,6 +49,19 @@
                 <div>Description:</div>
                 <div><textarea name="descr" rows="10" required></textarea></div>
                 <div><input type="button" id="buttonCreateBook" value="Create" /></div>
+            </form>
+        </section>
+        
+        <section id="viewCreateRecipe">
+            <h1>Create Recipe</h1>
+            <form id="formCreateRecipe">
+                <div>Title:</div>
+                <div><input type="text" name="title" required /></div>
+                <div>Ingredients:</div>
+                <div><input type="text" name="ingredients" required /></div>
+                <div>Directions:</div>
+                <div><textarea name="directions" rows="10" required></textarea></div>
+                <div><input type="button" id="buttonCreateRecipe" value="Create" /></div>
             </form>
         </section>
 
