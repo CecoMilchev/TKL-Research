@@ -20,30 +20,31 @@ $(function() {
     function showHomeView() {
         showView("viewHome");
     }
-  
+
     function showListBooksView() {
         showView("viewListBooks");
-        
+
     }
 
     function showListRecipesView() {
         showView("viewListRecipes");
-        
+
     }
-    $('#linkListBooks').click(()=>{
+    $('#linkListBooks').click(() => {
         controller.commandProcessor.listBooksCommand();
         console.log('list call');
-        showListBooksView();    
+        showListBooksView();
     })
-    $('#linkListRecipes').click(()=>{
+    $('#linkListRecipes').click(() => {
         controller.commandProcessor.listRecipesCommand();
-        showListRecipesView();    
+        showListRecipesView();
     })
 
     function showCreateBookView() {
         showView("viewCreateBook");
         $("#formCreateBook").trigger("reset");
     }
+
     function showCreateRecipeView() {
         showView("viewCreateRecipe");
         $("#formCreateRecipe").trigger("reset");
@@ -58,15 +59,15 @@ $(function() {
     }
 
     //Bind the form submit Buttons
-   // $("#formLogin").submit(loginUser);
-   // $("#formRegister").submit(registerUser);
-    $("#buttonCreateBook").click(()=>{
+    // $("#formLogin").submit(loginUser);
+    // $("#formRegister").submit(registerUser);
+    $("#buttonCreateBook").click(() => {
         x: console.log('clicked');
-         controller.commandProcessor.createProcess();
+        controller.commandProcessor.createProcess();
 
-        });
-    $("#buttonCreateRecipe").click(()=>{
+    });
+    $("#buttonCreateRecipe").click(() => {
         x: console.log('clicked');
-            controller.commandProcessor.createRecipeProcess();
+        controller.commandProcessor.createRecipeProcess();
     });
 });
