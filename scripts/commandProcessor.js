@@ -9,10 +9,15 @@ const commandProcessorFunction = (commands) => {
 
          commands.createBook(bookData.title, bookData.author, bookData.description);
          $("#formCreateBook").trigger("reset");
+
+         const listBooksCommand = function() {
+             commands.listBooks();
+         }
     }
 
     return {
         x: console.log('commandProcessor'),
-        createProcess: createProcess
+        createProcess: createProcess,
+        listBooksCommand: listBooksCommand
     }
 };

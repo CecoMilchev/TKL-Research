@@ -21,7 +21,7 @@ $(function() {
   
     function showListBooksView() {
         showView("viewListBooks");
-      //  listBooks();
+        controller.listBooksCommand();
     }
 
     function showCreateBookView() {

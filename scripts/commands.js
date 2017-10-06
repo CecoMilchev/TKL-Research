@@ -27,6 +27,7 @@ const commandsFunc = (factory, database) => {
     }
 
     return {
-        createBook: createBook
+        createBook: createBook,
+        listBooks: listBooks
     }
 }
