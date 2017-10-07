@@ -9,11 +9,11 @@ $(function() {
     $('#linkListRecipes').click(showListRecipesView);
     $('#linkCreateBook').click(showCreateBookView);
     $('#linkCreateRecipe').click(showCreateRecipeView);
-
+    $('#linkLeaveUsAComment').click(showCommentsView);
     $('#linkSearch').click(showSearch);
 
     function showView(viewName) {
-        //hide all viewvs and show the selected view only
+        //hide all views and show the selected view only
         $("main > section").hide();
         $("#" + viewName).show();
     }
@@ -32,9 +32,7 @@ $(function() {
 
     }
 
-    function showCommentsView() {
-        showView("viewComments")
-    }
+
 
 
     $('#linkListBooks').click(() => {
@@ -65,6 +63,10 @@ $(function() {
         showView("search");
     }
 
+    function showCommentsView() {
+        showView("viewLeaveUsAComment")
+        $("#formCreateComment").trigger("reset");
+    }
     //Bind the form submit Buttons
     // $("#formLogin").submit(loginUser);
     // $("#formRegister").submit(registerUser);
