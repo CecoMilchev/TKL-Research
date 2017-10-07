@@ -79,4 +79,8 @@ $(function() {
         x: console.log('clicked');
         controller.commandProcessor.createRecipeProcess();
     });
+    $("#buttonCreateComment").click(() => {
+        x: console.log('clicked');
+        controller.commandProcessor.createCommentProcess();
+    });
 });

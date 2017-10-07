@@ -21,7 +21,15 @@ const commandProcessorFunction = (commands) => {
         commands.createRecipe(recipeData.title, recipeData.ingredients, recipeData.directions);
         $("#formCreateBook").trigger("reset");
     }
+    const createCommentProcess = () => {
+        let commentData = {
+            comment: $("#formCreateComment input[name=comment]").val(),
+            username: $("#formCreateComment input[name=username]").val(),
+        };
 
+        commands.createComment(commentData.comment, commentData.username);
+        $("#formCreateComment").trigger("reset");
+    }
     const listBooksCommand = function() {
         commands.listBooks();
     }
@@ -33,6 +41,7 @@ const commandProcessorFunction = (commands) => {
         x: console.log('commandProcessor'),
         createProcess: createProcess,
         createRecipeProcess: createRecipeProcess,
+        createCommentProcess: createCommentProcess,
         listBooksCommand: listBooksCommand,
         listRecipesCommand: listRecipesCommand
     }

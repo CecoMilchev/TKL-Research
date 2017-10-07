@@ -69,9 +69,21 @@ const commandsFunc = (factory, database) => {
 
     }
 
+    function createComment(comment, username) {
+        let commentData = {
+            comment: $("#formCreateComment input[name=comment]").val(),
+            username: $("#formCreateComment input[name=username]").val(),
+        };
+
+        let commentary = factory.createComment(commentData.comment, commentData.username);
+        database.addComment(commentary);
+        console.log(database.commentary);
+    }
+
     return {
         createBook: createBook,
         createRecipe: createRecipe,
+        createComment: createComment,
         listRecipes: listRecipes,
         listBooks: listBooks
     }

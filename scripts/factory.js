@@ -23,10 +23,20 @@ const factory = function() {
             directions: directions
         }
     }
+
+    function createComment(comment, username) {
+        return {
+            id: IDgen(),
+            comment: comment,
+            username: username
+        }
+    }
+
     return {
         x: console.log("factroy"),
         createBook: createBook,
-        createRecipe: createRecipe
+        createRecipe: createRecipe,
+        createComment: createComment
     }
 };
 
