@@ -12,6 +12,16 @@ const commandProcessorFunction = (commands) => {
         $("#formCreateBook").trigger("reset");
     }
 
+    const editBookProcess = () => {
+        let bookData = {
+            id: $("#formEditBook input[name=id]").val(),
+            title: $("#formEditBook input[name=title]").val(),
+            author: $("#formEditBook input[name=author]").val(),
+            description: $("#formEditBook textarea[name=descr]").val()
+        };
+        commands.editBook(bookData);
+    }
+
     const createRecipeProcess = () => {
         let recipeData = {
             title: $("#formCreateRecipe input[name=title]").val(),
@@ -19,7 +29,7 @@ const commandProcessorFunction = (commands) => {
             directions: $("#formCreateRecipe textarea[name=directions]").val()
         };
         commands.createRecipe(recipeData.title, recipeData.ingredients, recipeData.directions);
-        $("#formCreateBook").trigger("reset");
+        $("#formCreateRecipe").trigger("reset");
     }
     const createCommentProcess = () => {
         let commentData = {
@@ -30,19 +40,20 @@ const commandProcessorFunction = (commands) => {
         commands.createComment(commentData.comment, commentData.username);
         $("#formCreateComment").trigger("reset");
     }
-    const listBooksCommand = function() {
+    const listBooksCommand = function () {
         commands.listBooks();
     }
-    const listRecipesCommand = function() {
+    const listRecipesCommand = function () {
         commands.listRecipes();
     }
 
     return {
         x: console.log('commandProcessor'),
         createProcess: createProcess,
+        listBooksCommand: listBooksCommand,
+        editBookProcess: editBookProcess,
         createRecipeProcess: createRecipeProcess,
         createCommentProcess: createCommentProcess,
-        listBooksCommand: listBooksCommand,
         listRecipesCommand: listRecipesCommand
     }
 };

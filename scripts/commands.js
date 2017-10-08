@@ -43,6 +43,19 @@ const commandsFunc = (factory, database) => {
         showView("viewEditBook");
     }
 
+    function editBook(bookData){
+        let books = database.returnBooks();
+        for (let book of books) {
+            if (book.id == bookData.id) {
+                book.author = bookData.author;
+                book.title = bookData.title;
+                book.description = bookData.description;
+            }
+        }
+       
+       database.editBooks(books);
+    }
+
     function listBooks() {
         $('#books').empty();
         let books = database.returnBooks();
@@ -142,9 +155,10 @@ const commandsFunc = (factory, database) => {
 
     return {
         createBook: createBook,
+        editBook: editBook,
+        listBooks: listBooks,
         createRecipe: createRecipe,
         createComment: createComment,
-        listRecipes: listRecipes,
-        listBooks: listBooks
+        listRecipes: listRecipes
     }
 }

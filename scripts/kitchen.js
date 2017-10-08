@@ -70,8 +70,13 @@ $(function() {
     $("#buttonCreateBook").click(() => {
         x: console.log('clicked');
         controller.commandProcessor.createProcess();
-
     });
+
+    $("#buttonEditBook").click(() => {
+        x: console.log('clicked');
+        controller.commandProcessor.editBookProcess();
+    });
+
     $("#buttonCreateRecipe").click(() => {
         x: console.log('clicked');
         controller.commandProcessor.createRecipeProcess();
