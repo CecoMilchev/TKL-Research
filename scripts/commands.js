@@ -1,4 +1,6 @@
 const commandsFunc = (factory, database) => {
+
+    // Books functions
     function createBook(title, author, category, description) {
         let bookData = {
             title: $("#formCreateBook input[name=title]").val(),
@@ -12,6 +14,35 @@ const commandsFunc = (factory, database) => {
         console.log(database.books);
     }
 
+    function loadBookForEdit(id) {
+        function showView(viewName) {
+            //hide all views and show the selected view only
+            $("main > section").hide();
+            $("#" + viewName).show();
+        }
+
+        function showEditBookView() {
+            showView("viewEditBook");
+        }
+
+        let books = database.returnBooks();
+        console.log(books);
+        console.log(id);
+        let book;
+        for (let b of books) {
+            if (b.id == id) {
+                book = b;
+                console.log('found');
+            }
+        }
+        console.log(book);
+        $('#formEditBook input[name=id]').val(book.id);
+        $('#formEditBook input[name=author]').val(book.author);
+        $('#formEditBook input[name=title]').val(book.title);
+        $('#formEditBook textarea[name=descr]').val(book.description);
+        showView("viewEditBook");
+    }
+
     function listBooks() {
         $('#books').empty();
         let books = database.returnBooks();
@@ -20,21 +51,44 @@ const commandsFunc = (factory, database) => {
             let p = $('<p>').append('No books yet.');
             booksList.append(p);
         } else {
-            let booksTable = $('<table>');
+            let booksTable = $('<table>').append(
+                $('<tr>')
+                    .append('<th>#ID</th><th>Title</th><th>Author</th><th>Description</th><th>Category</th><th>Actions</th>')
+            );
+
             for (var book of books) {
+
+                let links = [];
+
+                let deleteLink = $("<a href='#'>[Delete]</a>")
+                    .click();
+
+                let editLink = $("<a href='#'>[Edit]</a>")
+                    .attr('id', book.id)
+                    .click(function (event) {
+                        loadBookForEdit(event.target.id);
+                    });
+
+                links.push(editLink);
+                links.push(" ");
+                links.push(deleteLink);
+
                 let tableRow = $('<tr>').append(
+                    $('<td>').text(book.id),
                     $('<td>').text(book.title),
                     $('<td>').text(book.author),
                     $('<td>').text(book.category),
-                    $('<td>').text(book.description)
+                    $('<td>').text(book.description),
+                    $("<td>").append(links)
                 );
+               
                 booksTable.append(tableRow);
             }
             booksList.append(booksTable);
         }
-
     }
 
+    // Recipies functions
     function createRecipe(title, ingredients, directions) {
         let recipeData = {
             title: $("#formCreateRecipe input[name=title]").val(),
