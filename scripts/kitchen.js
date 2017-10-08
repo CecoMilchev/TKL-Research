@@ -24,7 +24,6 @@ $(function() {
 
     function showListBooksView() {
         showView("viewListBooks");
-
     }
 
     function showListRecipesView() {

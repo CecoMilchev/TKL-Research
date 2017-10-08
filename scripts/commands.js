@@ -1,6 +1,20 @@
 const commandsFunc = (factory, database) => {
 
     // Books functions
+    function showView(viewName) {
+        //hide all views and show the selected view only
+        $("main > section").hide();
+        $("#" + viewName).show();
+    }
+
+    function showEditBookView() {
+        showView("viewEditBook");
+    }
+
+    function showListBooksView() {
+        showView("viewListBooks");
+    }
+
     function createBook(title, author, category, description) {
         let bookData = {
             title: $("#formCreateBook input[name=title]").val(),
@@ -15,15 +29,7 @@ const commandsFunc = (factory, database) => {
     }
 
     function loadBookForEdit(id) {
-        function showView(viewName) {
-            //hide all views and show the selected view only
-            $("main > section").hide();
-            $("#" + viewName).show();
-        }
-
-        function showEditBookView() {
-            showView("viewEditBook");
-        }
+    
 
         let books = database.returnBooks();
         console.log(books);
@@ -54,6 +60,8 @@ const commandsFunc = (factory, database) => {
         }
        
        database.editBooks(books);
+       listBooks();
+       showListBooksView();
     }
 
     function deleteBook(id){
