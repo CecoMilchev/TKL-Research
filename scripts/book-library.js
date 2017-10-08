@@ -32,9 +32,6 @@ $(function() {
 
     }
 
-
-
-
     $('#linkListBooks').click(() => {
         controller.commandProcessor.listBooksCommand();
         console.log('list call');

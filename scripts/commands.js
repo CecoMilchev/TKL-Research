@@ -78,6 +78,9 @@ const commandsFunc = (factory, database) => {
         let commentary = factory.createComment(commentData.comment, commentData.username);
         database.addComment(commentary);
         console.log(database.commentary);
+
+        let c = $('.container').append('No comments yet.');
+        console.log(c);
     }
 
     return {
