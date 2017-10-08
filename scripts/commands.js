@@ -56,6 +56,19 @@ const commandsFunc = (factory, database) => {
        database.editBooks(books);
     }
 
+    function deleteBook(id){
+        let books = database.returnBooks();
+        let index;
+        for(let i = 0; i < books.length; i+=1){
+            if(books[i].id==id){
+                index = i;
+            }
+        }
+        books.splice(index, 1);
+        database.editBooks(books);
+        listBooks();
+    }
+
     function listBooks() {
         $('#books').empty();
         let books = database.returnBooks();
@@ -74,7 +87,10 @@ const commandsFunc = (factory, database) => {
                 let links = [];
 
                 let deleteLink = $("<a href='#'>[Delete]</a>")
-                    .click();
+                .attr('id', book.id)
+                .click(function (event) {
+                    deleteBook(event.target.id);
+                });
 
                 let editLink = $("<a href='#'>[Edit]</a>")
                     .attr('id', book.id)
