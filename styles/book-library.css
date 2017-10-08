@@ -118,8 +118,15 @@ table td {
 
 footer {
     background: #DDD;
-    padding: 5px 10px;
-    font-size: 0.8em;
     text-align: center;
+    padding: 5px;
+    line-height: 1.5;
     border-radius: 3px;
+    margin: 6px 6px;
+    position:fixed;
+   right: 2px;
+   left: 2px;
+    bottom:0px;
+    height:25px;
 }
+
