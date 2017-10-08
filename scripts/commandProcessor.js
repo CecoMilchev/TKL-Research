@@ -16,7 +16,7 @@ const commandProcessorFunction = (commands) => {
         let recipeData = {
             title: $("#formCreateRecipe input[name=title]").val(),
             ingredients: $("#formCreateRecipe input[name=ingredients]").val(),
-            directions: $("#formCreateBook textarea[name=directions]").val()
+            directions: $("#formCreateRecipe textarea[name=directions]").val()
         };
         commands.createRecipe(recipeData.title, recipeData.ingredients, recipeData.directions);
         $("#formCreateBook").trigger("reset");

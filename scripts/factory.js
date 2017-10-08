@@ -26,9 +26,10 @@ const factory = function() {
 
     function createComment(comment, username) {
         return {
-            id: IDgen(),
+
             comment: comment,
-            username: username
+            username: username,
+            id: IDgen(),
         }
     }
 

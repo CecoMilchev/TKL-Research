@@ -79,7 +79,10 @@ const commandsFunc = (factory, database) => {
         database.addComment(commentary);
         console.log(database.commentary);
 
-        let c = $('.container').append('No comments yet.');
+        var div = document.getElementById('commentSection');
+        div.innerHTML += commentData.comment;
+        div.innerHTML += commentData.username;
+        // let c = $('.container').append("asdasdsad");
         console.log(c);
     }
 
